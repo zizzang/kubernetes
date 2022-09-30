@@ -26,18 +26,27 @@ sudo apt-get -y update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-## (in case) kubeadm init failed### 
-#sudo rm /etc/containerd/config.toml
-#sudo systemctl restart containerd
-#sudo kubeadm init
-###################################
 
+## (in case) kubeadm command  failed##
+sudo rm /etc/containerd/config.toml
+sudo systemctl restart containerd
+##########################################
 
-# Create Cluster
+# Create Cluster (Only Control-plane)
 #sudo kubeadm init --pod-network-cidr=172.16.0.0/16
+#mkdir -p $HOME/.kube
+#sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+#sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
+# Create CNI(Only Control-plane), Network Plugin Type(Calico)
+#curl https://docs.projectcalico.org/manifests/calico.yaml -O
+#kubectl apply -f calico.yaml
 
 
+# Create Token(Only Control-plane)
+#sudo kubeadm token create --print-join-command
 
 
+# Join Cluster(Only Node)
+# ex) kubeadm join <xxxxxxx> --token <xxxxxxx> --discovery-token-ca-cert-hash <xxxxxxxx>

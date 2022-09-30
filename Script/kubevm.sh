@@ -7,7 +7,7 @@ az group create \
 # Create VM
 az vm create \
     --resource-group dolphin \
-    --name master \
+    --name node1 \
     --size Standard_D2s_v3 \
     --image UbuntuLTS \
     --location koreacentral \
