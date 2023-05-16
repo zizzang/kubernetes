@@ -50,4 +50,4 @@ sudo systemctl restart containerd
 
 
 # Join Cluster(Only Node)
-# ex) kubeadm join <xxxxxxx> --token <xxxxxxx> --discovery-token-ca-cert-hash <xxxxxxxx>
+# ex)sudo kubeadm join <xxxxxxx> --token <xxxxxxx> --discovery-token-ca-cert-hash <xxxxxxxx>
