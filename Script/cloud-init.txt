@@ -40,7 +40,8 @@ sudo systemctl restart containerd
 
 
 # Create CNI(Only Control-plane), Network Plugin Type(Calico)
-#curl https://docs.projectcalico.org/manifests/calico.yaml -O
+#latest 20230516
+#curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml -O
 #kubectl apply -f calico.yaml
 
 
